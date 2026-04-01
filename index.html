@@ -362,6 +362,7 @@
 									<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
 										<div>
 											<h4 class="text-sm font-bold text-blue-800">二级域名泛解析模式</h4>
+											<p class="text-xs text-gray-500 mt-1">登录cloudflare后，Global API Key访问这个链接拿：https://dash.cloudflare.com/profile/api-tokens</p>
 											<p class="text-xs text-gray-500 mt-1">开启后将忽略上方主域名池，使用下方生成的二级域名轮询。配置需点击右下角保存生效。</p>
 											<p v-if="!['freemail', 'imap'].includes(config.email_api_mode)" class="text-[11px] font-bold text-red-600 mt-2 bg-red-50 px-2.5 py-1.5 rounded-md inline-block border border-red-100 shadow-sm">
 												⚠️ 系统提示：当前发信 API 模式不支持此功能！仅允许在 freemail 或 imap 模式下开启。
@@ -376,11 +377,11 @@
 									<div v-if="config.enable_sub_domains" class="border-t border-blue-100 pt-4 space-y-4">
 										<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 											<div>
-												<label class="block text-xs font-bold text-gray-600 mb-1">CF 账号邮箱</label>
+												<label class="block text-xs font-bold text-gray-600 mb-1">cloudflare登录账号</label>
 												<input type="text" v-model="config.cf_api_email" class="form-input bg-white mb-0 border-gray-300 text-gray-700 focus:ring-blue-500" placeholder="邮箱">
 											</div>
 											<div>
-												<label class="block text-xs font-bold text-gray-600 mb-1">CF Global API Key</label>
+												<label class="block text-xs font-bold text-gray-600 mb-1">cloudflare Global API Key</label>
 												<input type="password" v-model="config.cf_api_key" class="form-input bg-white mb-0 border-gray-300 text-gray-700 focus:ring-blue-500" placeholder="是CF API 密钥Global API Key，不要填成了API令牌">
 											</div>
 											<div>
