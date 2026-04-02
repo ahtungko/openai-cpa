@@ -217,7 +217,7 @@ def reload_all_configs():
     ENABLE_SUB_DOMAINS = _c.get("enable_sub_domains", False)
     SUB_DOMAINS_LIST = _c.get("sub_domains_list", "")
 
-    if EMAIL_API_MODE in ["imap", "freemail"] and ENABLE_SUB_DOMAINS and SUB_DOMAINS_LIST:
+    if EMAIL_API_MODE in ["imap", "freemail", "cloudflare_temp_email"] and ENABLE_SUB_DOMAINS and SUB_DOMAINS_LIST:
         MAIL_DOMAINS = SUB_DOMAINS_LIST
     else:
         MAIL_DOMAINS = MAIL_DOMAINS
