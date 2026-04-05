@@ -180,10 +180,10 @@ def get_email_and_token(proxies: Any = None) -> tuple:
                             try:
                                 import yaml
                                 with cfg.CONFIG_FILE_LOCK:
-                                    with open("config.yaml", "r", encoding="utf-8") as f:
+                                    with open(cfg.CONFIG_PATH, "r", encoding="utf-8") as f:
                                         y = yaml.safe_load(f) or {}
                                     y.setdefault("luckmail", {})["tag_id"] = tag_id
-                                    with open("config.yaml", "w", encoding="utf-8") as f:
+                                    with open(cfg.CONFIG_PATH, "w", encoding="utf-8") as f:
                                         yaml.dump(y, f, allow_unicode=True, sort_keys=False)
                                 print(f"[{cfg.ts()}] [系统] 标签 ID {tag_id} 已同步至配置文件")
                             except Exception as e:

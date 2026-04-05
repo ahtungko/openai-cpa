@@ -12,6 +12,7 @@ from utils.proxy_manager import reload_proxy_config
 CONFIG_FILE_LOCK = threading.Lock()
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(CURRENT_DIR)
+CONFIG_PATH = os.path.join(BASE_DIR, "data", "config.yaml")
 def ts() -> str:
     return datetime.now().strftime("%H:%M:%S")
 
