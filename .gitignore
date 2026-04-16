@@ -8,6 +8,7 @@ routers/__pycache__/
 # IDE 配置文件
 .idea/
 .vscode/
+.venv
 
 # 本地数据库和日志
 data/
